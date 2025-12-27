@@ -5,13 +5,18 @@
     <meta http-equiv="content-language" content="en">
     <meta http-equiv="content-script-type" content="text/javascript">
     <meta http-equiv="content-style-type" content="text/css">
-    <meta name="description" content="This is the online markdown editor with live preview.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A powerful markdown editor with live preview, syntax highlighting, dark mode, Mermaid diagrams, LaTeX math, and multiple export options.">
+    <meta name="keywords" content="markdown, editor, preview, syntax highlighting, dark mode, mermaid, latex, export">
+    <meta name="theme-color" content="#444444">
 
-    <link rel="stylesheet" type="text/css" href="css/style.css?v=1.10.1">
+    <link rel="stylesheet" type="text/css" href="css/style.css?v=2.0.0">
     <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
     <title>Markdown Live Preview</title>
-    <script type="module" crossorigin src="/assets/index-DXVBtf7Z.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-C-vOJggO.css">
+    <script type="module" crossorigin src="/assets/index-BaQfBUEK.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Dveg50Ck.css">
   </head>
 
   <!-- Google tag (gtag.js) -->
@@ -28,12 +33,42 @@
 
     <header>
         <div id="menu-items">
-            <div><a href="/">Markdown Live Preview</a></div>
-            <div id="reset-button"><a href="#">Reset</a></div>
-            <div id="copy-button"><a href="#">Copy</a></div>
-            <div id="sync-button"><input type="checkbox" id="sync-scroll-checkbox"><label for="sync-scroll-checkbox">Sync scroll</label></div>
+            <div class="logo"><a href="/">Markdown Live Preview</a></div>
+            <div id="reset-button" class="header-btn"><a href="#" title="Reset to default"><i class="fas fa-redo"></i> <span class="btn-text">Reset</span></a></div>
+            <div id="copy-button" class="header-btn"><a href="#" title="Copy markdown"><i class="fas fa-copy"></i> <span class="btn-text">Copy</span></a></div>
+            <div id="import-button" class="header-btn"><a href="#" title="Import file (Ctrl+O)"><i class="fas fa-file-import"></i> <span class="btn-text">Import</span></a></div>
         </div>
-        <div id="github"><a href="https://github.com/tanabe/markdown-live-preview"><img src="image/GitHub-Mark-Light-32px.webp"></a></div>
+        <div id="center-menu-items">
+            <div id="word-count" class="word-count">0 words | 0 chars | 0 lines</div>
+        </div>
+        <div id="right-menu-items">
+            <div id="settings-group" class="settings-group">
+                <div id="sync-button" class="checkbox-item" title="Sync scroll position">
+                    <input type="checkbox" id="sync-scroll-checkbox">
+                    <label for="sync-scroll-checkbox">Sync</label>
+                </div>
+                <div id="line-numbers-button" class="checkbox-item" title="Toggle line numbers">
+                    <input type="checkbox" id="line-numbers-checkbox" checked>
+                    <label for="line-numbers-checkbox">Lines</label>
+                </div>
+            </div>
+            <div id="dark-mode-button" class="header-btn icon-btn" title="Toggle dark mode (Ctrl+D)">
+                <a href="#"><i class="fas fa-moon"></i></a>
+            </div>
+            <div id="fullscreen-button" class="header-btn icon-btn" title="Toggle fullscreen preview (F11)">
+                <a href="#"><i class="fas fa-expand"></i></a>
+            </div>
+            <div id="download-menu">
+                <a href="#" id="download-button" title="Export options"><i class="fas fa-download"></i></a>
+                <div class="dropdown-content">
+                    <a href="#" id="export-md"><i class="fas fa-file-alt"></i> Export as Markdown</a>
+                    <a href="#" id="export-html"><i class="fas fa-code"></i> Export as HTML</a>
+                    <a href="#" id="export-pdf"><i class="fas fa-file-pdf"></i> Export as PDF</a>
+                    <a href="#" id="export-doc"><i class="fas fa-file-word"></i> Export as DOC</a>
+                </div>
+            </div>
+            <div id="github"><a href="https://github.com/tanabe/markdown-live-preview" target="_blank" rel="noopener" title="View on GitHub"><img src="image/GitHub-Mark-Light-32px.webp" alt="GitHub"></a></div>
+        </div>
     </header>
 
     <div id="container" class="split-container">

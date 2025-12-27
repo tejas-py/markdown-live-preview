@@ -1,34 +1,58 @@
 {
   "name": "markdown-live-preview",
-  "version": "1.0.0",
-  "description": "[Markdown Live Preview](https://markdownlivepreview.com/) is a tiny web tool to preview Markdown formatted text.",
+  "version": "2.0.0",
+  "description": "A powerful markdown editor with live preview, syntax highlighting, dark mode, and multiple export options.",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "http-server public",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "serve": "http-server public",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "format": "prettier --write \"src/**/*.{js,css}\"",
+    "test": "vitest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tanabe/markdown-live-preview.git"
   },
-  "keywords": [],
+  "keywords": [
+    "markdown",
+    "preview",
+    "editor",
+    "live-preview",
+    "syntax-highlighting",
+    "dark-mode",
+    "pwa"
+  ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/tanabe/markdown-live-preview/issues"
   },
   "homepage": "https://github.com/tanabe/markdown-live-preview#readme",
   "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "eslint": "^9.17.0",
+    "globals": "^15.14.0",
     "http-server": "^14.1.1",
-    "vite": "^6.3.6"
+    "prettier": "^3.4.2",
+    "vite": "^6.3.6",
+    "vitest": "^2.1.8"
   },
   "dependencies": {
     "dompurify": "^3.2.5",
     "github-markdown-css": "^5.8.1",
+    "highlight.js": "^11.11.1",
+    "katex": "^0.16.15",
     "marked": "^15.0.7",
+    "marked-emoji": "^1.4.1",
+    "marked-footnote": "^1.2.4",
+    "marked-gfm-heading-id": "^4.1.1",
+    "marked-highlight": "^2.2.1",
+    "mermaid": "^11.4.1",
     "monaco-editor": "^0.52.2",
     "storehouse-js": "github:tanabe/Storehouse-js"
   }
