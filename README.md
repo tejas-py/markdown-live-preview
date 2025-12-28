@@ -44,7 +44,6 @@ A powerful, feature-rich markdown editor with live preview. Write markdown on th
 
 | Shortcut | Action |
 |----------|--------|
-| `Ctrl/Cmd + S` | Download as Markdown |
 | `Ctrl/Cmd + Shift + E` | Export as HTML |
 | `Ctrl/Cmd + D` | Toggle dark mode |
 | `Ctrl/Cmd + O` | Import file |

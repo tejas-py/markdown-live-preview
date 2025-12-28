@@ -268,7 +268,6 @@ sequenceDiagram
 
 | Shortcut | Action |
 |----------|--------|
-| Ctrl/Cmd + S | Download as Markdown |
 | Ctrl/Cmd + Shift + E | Export as HTML |
 | Ctrl/Cmd + D | Toggle dark mode |
 | Ctrl/Cmd + O | Import file |
@@ -766,14 +765,6 @@ Enjoy writing! :tada:
     document.addEventListener('keydown', (e) => {
       const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
       const ctrlKey = isMac ? e.metaKey : e.ctrlKey;
-
-      // Ctrl/Cmd + S: Save as Markdown
-      if (ctrlKey && e.key === 's') {
-        e.preventDefault();
-        const markdown = editor.getValue();
-        const title = getDocumentTitleFromMarkdown(markdown);
-        exportAsMarkdown({ markdown, title });
-      }
 
       // Ctrl/Cmd + Shift + E: Export as HTML
       if (ctrlKey && e.shiftKey && e.key === 'E') {
